@@ -24,7 +24,7 @@ class App extends Component {
         <div className="row">
           <div className="col-xs-11 col-xs-offset-11">
             <Home name={"max"} age={12} user={user}>
-            <p>I am a child</p>
+            <p>I am a child </p>
             </Home>
           </div>
         </div>
