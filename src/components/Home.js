@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.age = this.props.age;
+    this.state ={
+      age: props.initialAge
+    }
   }
 
   onMakeOlder() {
-    this.age += 3;
-    console.log(this);
+    this.setState({
+      age: this.state.age + 3
+    })
   }
   render() {
     return (
@@ -17,7 +20,7 @@ class Home extends Component {
         <div className="row">
           <div className="col-xs-11 col-xs-offset-11">
             <div>
-              Your name is {this.props.name}, your age is {this.props.age}
+              Your name is {this.props.name}, your age is {this.state.age}
 
             </div>
            <button onClick={() => {this.onMakeOlder()}} className="btn btn-primary"> Make me older</button>
@@ -34,6 +37,5 @@ export default Home;
 Home.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
-  user: PropTypes.object,
-  children: PropTypes.element.isRequired
+  user: PropTypes.object
 }
