@@ -14,6 +14,10 @@ class Home extends Component {
       age: this.state.age + 3
     })
   }
+
+  handleGreet() {
+    this.props.greet(this.state.age)
+  }
   render() {
     return (
       <div className="container">
@@ -24,7 +28,7 @@ class Home extends Component {
             </div>
            <button onClick={() => {this.onMakeOlder()}} className="btn btn-primary"> Make me older</button>
            <hr />
-           <button onClick={this.props.greet} className="btn btn-primary">greet</button>
+           <button onClick={this.handleGreet.bind(this)} className="btn btn-primary">greet</button>
           </div>
         </div>
 
