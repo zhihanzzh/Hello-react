@@ -7,16 +7,19 @@ class Home extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-11 col-xs-offset-11">
-          <div>
-          Your name is {this.props.name}, your age is {this.props.age}
+            <div>
+              Your name is {this.props.name}, your age is {this.props.age}
 
-          </div>
-          <div>
-          <h4>hobbiees</h4>
-          <ul>
-          {this.props.user.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)}
-          </ul>
-          </div>
+            </div>
+            <div>
+              <h4>hobbiees</h4>
+              <ul>
+                {this.props.user.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)}
+              </ul>
+              <div>
+                {this.props.children}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -28,7 +31,8 @@ class Home extends Component {
 export default Home;
 
 Home.propTypes = {
-  name : PropTypes.string,
-  age : PropTypes.number,
-  user : PropTypes.object
+  name: PropTypes.string,
+  age: PropTypes.number,
+  user: PropTypes.object,
+  children: PropTypes.element.isRequired
 }
