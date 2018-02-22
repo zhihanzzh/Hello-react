@@ -21,9 +21,10 @@ class Home extends Component {
           <div className="col-xs-11 col-xs-offset-11">
             <div>
               Your name is {this.props.name}, your age is {this.state.age}
-
             </div>
            <button onClick={() => {this.onMakeOlder()}} className="btn btn-primary"> Make me older</button>
+           <hr />
+           <button onClick={this.props.greet} className="btn btn-primary">greet</button>
           </div>
         </div>
 
@@ -37,5 +38,6 @@ export default Home;
 Home.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
-  user: PropTypes.object
+  user: PropTypes.object,
+  greet: PropTypes.func
 }
