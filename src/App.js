@@ -38,7 +38,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-11 col-xs-offset-11">
-            <Home name={"max"} initialAge={12} user={user} greet={this.onGreet} changeLink={this.onChangeLinkName.bind(this)} />
+            <Home name={"max"} initialAge={12} user={user} greet={this.onGreet} changeLink={this.onChangeLinkName.bind(this)} initialName={this.state.homeLink} />
           </div>
         </div>
       </div>

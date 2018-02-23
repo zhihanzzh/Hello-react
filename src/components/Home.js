@@ -5,8 +5,9 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state ={
+      inputValue: "s",
       age: props.initialAge,
-      homeLink: "changed"
+      homeLink: props.initialName
     }
   }
 
@@ -23,6 +24,13 @@ class Home extends Component {
   onChangeLink() {
     this.props.changeLink(this.state.homeLink);
   }
+
+  onHandleChange(event) {
+    this.setState({
+      homeLink: event.target.value,
+      inputValue: event.target.value
+    })
+  }
   render() {
     return (
       <div className="container">
@@ -35,6 +43,7 @@ class Home extends Component {
            <hr />
            <button onClick={this.handleGreet.bind(this)} className="btn btn-primary">greet</button>
            <hr />
+           <input type=""  value={this.state.inputValue} onChange={(event) => this.onHandleChange(event)}></input>
            <button onClick={this.onChangeLink.bind(this)} className="btn btn-primary">change link</button>
           </div>
         </div>
@@ -50,5 +59,7 @@ Home.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   user: PropTypes.object,
-  greet: PropTypes.func
+  greet: PropTypes.func,
+  initialName: PropTypes.string,
+  inputValue: PropTypes.string
 }
